@@ -60,6 +60,15 @@
   <p><em>โครงสร้างส่วนเชื่อมต่อระหว่าง Cloud, Database และ LINE Application</em></p>
 </div>
 
+## การตั้งค่า Datastreams บน Blynk Platform
+
+<div align="center">
+  <img src=".assets/Blynk Setting.png" alt="Google Sheet Database">
+  <p><em>การตั้งค่า Datastreams บน Blynk Platform</em></p>
+</div>
+
+---
+
 ### 💬 หน้าจอแสดงผลและ Rich Menu (LINE OA)
 ผู้ใช้งานสามารถโต้ตอบกับระบบผ่านแอปพลิเคชัน LINE ได้โดยตรง โดยสามารถเพิ่มหน้าต่าง Rich Menu ให้ผู้ใช้กดเพื่อขอดูรายงานคุณภาพน้ำ ณ ปัจจุบัน หรือตั้งค่าเปิด-ปิดการแจ้งเตือนเตือนภัยได้อย่างรวดเร็ว
 **RICH MENU ต้องออกเเบบเอง**
@@ -67,15 +76,6 @@
 <div align="center">
   <img src=".assets/rich menu.png" alt="LINE Rich Menu">
   <p><em>หน้าต่าง Rich Menu สำหรับให้ผู้ใช้งานโต้ตอบกับระบบผ่าน LINE</em></p>
-</div>
-
----
-
-## การตั้งค่า Datastreams บน Blynk Platform
-
-<div align="center">
-  <img src=".assets/Blynk Setting.png" alt="Google Sheet Database">
-  <p><em>การตั้งค่า Datastreams บน Blynk Platform</em></p>
 </div>
 
 ---

@@ -65,8 +65,17 @@
 **RICH MENU ต้องออกเเบบเอง**
 
 <div align="center">
-  <img src=".assets/rich_menu.jpg" alt="LINE Rich Menu">
+  <img src=".assets/rich menu.png" alt="LINE Rich Menu">
   <p><em>หน้าต่าง Rich Menu สำหรับให้ผู้ใช้งานโต้ตอบกับระบบผ่าน LINE</em></p>
+</div>
+
+---
+
+## การตั้งค่า Datastreams บน Blynk Platform
+
+<div align="center">
+  <img src=".assets/Blynk Setting.png" alt="Google Sheet Database">
+  <p><em>การตั้งค่า Datastreams บน Blynk Platform</em></p>
 </div>
 
 ---
@@ -75,7 +84,7 @@
 เราใช้ **Google Sheets** ทำหน้าที่เป็นฐานข้อมูล (Database) หลักในการจัดเก็บประวัติคุณภาพน้ำ (Log) ซึ่งช่วยให้เกษตรกรสามารถเข้ามาดูข้อมูลย้อนหลัง หรือนำข้อมูลไปวิเคราะห์ต่อยอดได้อย่างง่ายดาย โดยจะบันทึกค่าพารามิเตอร์ต่างๆ เช่น เวลา (Timestamp), pH, ORP, Turbidity, TDS และ Temperature
 
 <div align="center">
-  <img src=".assets/google_sheet.png" alt="Google Sheet Database">
+  <img src=".assets/Google Sheet.png" alt="Google Sheet Database">
   <p><em>ตัวอย่างการจัดเก็บข้อมูลคุณภาพน้ำลงใน Google Sheet</em></p>
 </div>
 

@@ -76,7 +76,6 @@ function replyLatestData(replyToken) {
     }
 
     // สร้าง Row ของ Sensor นั้น
-    // สร้าง Row ของ Sensor นั้น (แบบใหม่: รองรับชื่อยาว)
     flexContents.push({
       "type": "box",
       "layout": "vertical",

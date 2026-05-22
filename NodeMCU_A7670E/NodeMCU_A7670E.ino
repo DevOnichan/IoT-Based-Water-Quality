@@ -18,7 +18,7 @@
 #define MODEM_TX_PIN     D1 // ต่อกับ RX ของ A7670E
 
 const char apn[] = "internet";
-const char blynk_auth_token[] = "HOXuSs6Dv2u6DS18cbc7VRxCylCCzVC0"; 
+const char blynk_auth_token[] = "YOUR_BLYNK_TOKEN"; 
 
 const uint64_t SLEEP_DURATION_US = 600e6; // 10 นาที
 

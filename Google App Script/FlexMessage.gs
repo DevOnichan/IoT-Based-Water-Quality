@@ -1,5 +1,5 @@
 // ================= ส่วนแสดงผลหน้าตา Flex Message ทั้งหมด ================= //
-// ================= FLEX REPLY (ส่วนรายงานสถานะแบบสวยงาม) ================= //
+// ================= FLEX REPLY (ส่วนรายงาน) ================= //
 function replyLatestData(replyToken) {
   const settings = getSettings();
   const notifyStatus = settings.notify || 'ON';
@@ -28,7 +28,7 @@ function replyLatestData(replyToken) {
   // --- สร้าง Flex Container ---
   let flexContents = [];
 
-  // 1. System Frozen Warning (ถ้ามี)
+  // 1. System Frozen Warning
   if (systemState.isSystemOffline) {
      flexContents.push({
        "type": "box",

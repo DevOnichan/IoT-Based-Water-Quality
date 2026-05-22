@@ -1,5 +1,5 @@
 // ================= เก็บฟังก์ชันหลักที่เป็น Trigger และ Webhook ================= //
-// ================= MAIN FUNCTION (Trigger 10 นาที) ================= //
+// ================= MAIN FUNCTION (Trigger) ================= //
 function logBlynkData() {
   const settings = getSettings(); 
   if (!settings.blynkToken) return;

@@ -1,5 +1,5 @@
 // ================= การคำนวณ Alert เเจ้งเตือน และจัดการคำสั่ง Admin ================= //
-// ฟังก์ชันตรวจสอบความผิดปกติ (Updated: รวมทุกปัญหามาแจ้งเตือนพร้อมกัน)
+// ฟังก์ชันตรวจสอบความผิดปกติ 
 function checkSensorHealth(values) {
   const props = PropertiesService.getScriptProperties();
   let systemState = JSON.parse(props.getProperty('SYSTEM_STATE') || '{"freezeCount":0, "lastValues":{}, "isSystemOffline":false, "isAlerted":false}');
@@ -9,7 +9,7 @@ function checkSensorHealth(values) {
   let alertBubbles = [];
   let hasNewIssue = false; // ตัวแปรเช็คว่ามีเรื่องใหม่ต้องแจ้งไหม
 
-  // --- PART A: Check Freeze (เหมือนเดิม) ---
+  // --- PART A: Check Freeze  ---
   let allSame = true;
   let hasLastValues = Object.keys(systemState.lastValues).length > 0;
 
@@ -40,7 +40,7 @@ function checkSensorHealth(values) {
   }
   props.setProperty('SYSTEM_STATE', JSON.stringify(systemState));
 
-  // --- PART B: Check Sensor (Logic ใหม่) ---
+  // --- PART B: Check Sensor ---
   if (!systemState.isSystemOffline) {
     
     // 1. วนลูปอัปเดตสถานะการนับ (Counting) ของทุกตัวก่อน

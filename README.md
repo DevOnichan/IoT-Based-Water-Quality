@@ -60,7 +60,7 @@
   <p><em>โครงสร้างส่วนเชื่อมต่อระหว่าง Cloud, Database และ LINE Application</em></p>
 </div>
 
-## การตั้งค่า Datastreams บน Blynk Platform
+## 🟢 การตั้งค่า Datastreams บน Blynk Platform
 
 <div align="center">
   <img src=".assets/Blynk Setting.png" alt="Google Sheet Database">

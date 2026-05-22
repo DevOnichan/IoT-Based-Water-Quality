@@ -53,9 +53,40 @@
 ระบบนี้ถูกออกแบบมาเพื่อให้ผู้ใช้งานดูข้อมูลและรับการแจ้งเตือนได้สะดวกที่สุด:
 1. **Cloud Connection:** ข้อมูลจากบอร์ดจะถูกส่งขึ้นไปเก็บบนแพลตฟอร์มคลาวด์ของ Blynk
 2. **Database System:** เราใช้งาน Google Apps Script (GAS) เพื่อดึงข้อมูลจาก Blynk มาบันทึกลง Google Sheet อย่างเป็นระบบ
-3. **LINE Official Account:** แจ้งเตือนและติดต่อกับผู้ใช้งานผ่าน LINE Messaging API ทำให้สามารถส่งรายงานสถานะน้ำ แจ้งเตือนเมื่อค่าผิดปกติ และมีเมนู (Rich Menu) สำหรับตั้งค่าเปิด-ปิดการแจ้งเตือนได้ทันที
+3. **LINE Official Account:** แจ้งเตือนและติดต่อกับผู้ใช้งานผ่าน LINE Messaging API ทำให้สามารถส่งรายงานสถานะน้ำ แจ้งเตือนเมื่อค่าผิดปกติ และมีเมนูสำหรับการควบคุม
 
 <div align="center">
   <img src=".assets/User Interface Design.jpg" alt="User Interface and LINE Application Integration">
   <p><em>โครงสร้างส่วนเชื่อมต่อระหว่าง Cloud, Database และ LINE Application</em></p>
 </div>
+
+### 💬 หน้าจอแสดงผลและ Rich Menu (LINE OA)
+ผู้ใช้งานสามารถโต้ตอบกับระบบผ่านแอปพลิเคชัน LINE ได้โดยตรง โดยระบบจะมีหน้าต่าง Rich Menu ให้ผู้ใช้กดเพื่อขอดูรายงานคุณภาพน้ำ ณ ปัจจุบัน หรือตั้งค่าเปิด-ปิดการแจ้งเตือนเตือนภัยได้อย่างรวดเร็ว
+
+<div align="center">
+  <img src=".assets/rich_menu.jpg" alt="LINE Rich Menu">
+  <p><em>หน้าต่าง Rich Menu สำหรับให้ผู้ใช้งานโต้ตอบกับระบบผ่าน LINE</em></p>
+</div>
+
+---
+
+## 🗄️ ระบบฐานข้อมูล (Database)
+เราใช้ **Google Sheets** ทำหน้าที่เป็นฐานข้อมูล (Database) หลักในการจัดเก็บประวัติคุณภาพน้ำ (Log) ซึ่งช่วยให้เกษตรกรสามารถเข้ามาดูข้อมูลย้อนหลัง หรือนำข้อมูลไปวิเคราะห์ต่อยอดได้อย่างง่ายดาย โดยจะบันทึกค่าพารามิเตอร์ต่างๆ เช่น เวลา (Timestamp), pH, ORP, Turbidity, TDS และ Temperature
+
+<div align="center">
+  <img src=".assets/google_sheet.png" alt="Google Sheet Database">
+  <p><em>ตัวอย่างการจัดเก็บข้อมูลคุณภาพน้ำลงใน Google Sheet</em></p>
+</div>
+
+---
+
+## 💻 การติดตั้งและนำ Google Apps Script ไปใช้งาน
+ใน Repository นี้จะมีโฟลเดอร์ชื่อ `Google App Script` ซึ่งเก็บไฟล์โค้ดนามสกุล `.gs` สำหรับควบคุมการทำงานฝั่งเซิร์ฟเวอร์ (`Config.gs`, `FlexMessage.gs`, `Logic.gs`, `Main.gs`, `Utility.gs`) คุณสามารถนำโค้ดไปติดตั้งได้ตามขั้นตอนดังนี้:
+
+1. เปิด Google Sheet ที่คุณต้องการใช้เป็นฐานข้อมูล
+2. ไปที่เมนู **ส่วนขยาย (Extensions) > Apps Script**
+3. สร้างไฟล์สคริปต์ใหม่ให้ตรงกับชื่อไฟล์ในโฟลเดอร์ และคัดลอกโค้ดจากใน Repo ลงไปให้ครบทุกไฟล์
+4. ไปที่ไฟล์ `Config.gs` เพื่ออัปเดตข้อมูลตัวแปรต่างๆ ให้เป็นของคุณเอง (เช่น ใส่ค่า LINE Channel Access Token, URL/Token ของฝั่ง Blynk และ Spreadsheet ID)
+5. เมื่อตั้งค่าเสร็จแล้ว ให้กดปุ่ม **การทำให้ใช้งานได้ (Deploy) > การทำให้ใช้งานได้รายการใหม่ (New deployment)**
+6. เลือกประเภทการติดตั้งเป็น **เว็บแอป (Web App)** และตั้งค่าสิทธิ์การเข้าถึงเป็น "ทุกคน (Anyone)"
+7. คัดลอก **URL ของเว็บแอป (Webhook URL)** ที่ได้ ไปใส่ในระบบของ LINE Developers Console ในส่วนของ Messaging API เพื่อให้ระบบ LINE สามารถสื่อสารกับ Google Sheet ของเราได้

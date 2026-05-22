@@ -56,6 +56,6 @@
 3. [cite_start]**LINE Official Account:** การสื่อสารกับผู้ใช้งานจะทำผ่านแอปพลิเคชัน LINE โดยใช้ Messaging API เชื่อมต่อกับ Web App (GAS) [cite: 158, 228, 263] [cite_start]ทำให้ผู้ใช้สามารถรับรายงานสถานะน้ำล่าสุด แจ้งเตือนค่าที่สูง/ต่ำกว่าเกณฑ์ และสามารถใช้เมนู (Rich Menu) เพื่อเปิด-ปิดการแจ้งเตือนหรือดูข้อมูลได้อย่างสะดวก [cite: 324, 331, 358, 360]
 
 <div align="center">
-  <img src=".assets/User Interface Design.png" alt="User Interface and LINE Application Integration">
+  <img src=".assets/User Interface Design.jpg" alt="User Interface and LINE Application Integration">
   <p><em>โครงสร้างส่วนเชื่อมต่อระหว่าง Cloud, Database และ LINE Application</em></p>
 </div>
